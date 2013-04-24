@@ -1,0 +1,16 @@
+HtmlEmail mail=new HtmlEmail();
+  	mail.setTLS(true);
+		mail.setHostName("smtp.qq.com");
+		mail.setAuthentication("qq号", "密码");
+		mail.setCharset("utf-8");
+		
+		try {
+			mail.setFrom("发送方邮箱地址");
+			mail.addTo("接收方邮箱地址");
+			mail.setSubject("这是测试邮件");
+			mail.setHtmlMsg("youjian");
+			
+			mail.send();
+		} catch (EmailException e) {
+			e.printStackTrace();
+		}
